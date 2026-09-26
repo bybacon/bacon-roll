@@ -1,0 +1,23 @@
+title: bacon roll
+description: "Software, teams, and the craft of building things that work."
+baseurl: ""
+url: "https://roll.bybacon.com"
+author: alex berger
+
+github_username: bybacon
+rss: RSS
+
+sass:
+  sourcemap: never
+
+# Build settings
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+header_pages:
+  - about.markdown
+
+exclude:
+  - bacon-blog-content/

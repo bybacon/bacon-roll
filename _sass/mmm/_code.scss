@@ -1,0 +1,79 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+code, pre { font-family: 'Fira Code VF', 'Fira Code', monospace; }
+
+code {
+  @include relative-font-size(0.9375);
+  padding: 2px 6px;
+  border: 1px solid var(--code-inline-border);
+  border-radius: 5px;
+  background-color: var(--code-inline-bg);
+}
+
+pre {
+  @include relative-font-size(0.9375);
+  line-height: 1.6;
+  padding: 14px 18px;
+  overflow-x: auto;
+  border: none;
+
+  > code {
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+  }
+}
+
+.highlight {
+  background: #1c2a3c;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  margin-bottom: calc(#{$spacing-unit} / 2);
+
+  pre {
+    background-color: #1c2a3c;
+    border-radius: 9px;
+    color: #e0dfe8;
+    margin-bottom: 0;
+  }
+
+  .hll { background-color: #253448 }
+
+  // comments
+  .c, .cm, .c1 { color: #7a8fa0; font-style: italic }
+  .cp, .cs     { color: #ff7070; font-weight: bold }
+
+  // keywords & operators
+  .k, .kc, .kd, .kn, .kr, .kt, .nt, .ow { color: #b388ff; font-weight: bold }
+  .kp                                      { color: #b388ff }
+
+  // strings
+  .s, .s1, .s2, .sb, .sc, .sd,
+  .se, .sh, .si, .sr, .ss       { color: #ffd080 }
+  .sx                            { color: #ffaa44 }
+
+  // numbers
+  .m, .mf, .mh, .mi, .mo, .il  { color: #6ddd6d }
+
+  // names
+  .na, .ne { color: #c0c0d8 }
+  .nb, .bp { color: #4ecfdf }
+  .nc, .nn { color: #7ab8ff; text-decoration: underline }
+  .nf      { color: #7ab8ff }
+  .no, .nv, .vc, .vg, .vi { color: #80dcff }
+  .nd      { color: #ffaa44 }
+
+  // diff / generic output
+  .err           { color: #ff5f5f }
+  .gd, .gr, .gt { color: #ff7070 }
+  .ge            { font-style: italic }
+  .gh            { color: #ffffff; font-weight: bold }
+  .gi            { color: #78e878 }
+  .go            { color: #aaaaaa }
+  .gp            { color: #7a8fa0 }
+  .gs            { font-weight: bold }
+  .gu            { color: #ffffff; text-decoration: underline }
+  .w             { color: #5a6a7a }
+}

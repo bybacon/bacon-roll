@@ -1,0 +1,35 @@
+:root {
+  --bg:                 #FFE3F0;
+  --fg:                 #5D5D5D;
+  --fg-strong:          #1D1D1D;
+  --fg-muted:           #C3C3C3;
+  --accent:             #C082A2;
+  --border-brand:       rgba(192, 130, 162, 0.2);
+  --border-light:       #C3C3C3;
+  --link-hover:         #5D5D5D;
+  --code-inline-bg:     #F7D9EA;
+  --code-inline-border: #D09BB8;
+  --table-text:         #8B8B8B;
+  --table-row-even-bg:  #D2D2D2;
+  --table-th-bg:        #CBCBCB;
+  --table-th-border:    #B9B9B9;
+  --table-th-border-b:  #A4A4A4;
+}
+
+[data-theme="dark"] {
+  --bg:                 #1C1218;
+  --fg:                 #BFB0BC;
+  --fg-strong:          #E8DDE5;
+  --fg-muted:           #6A5F68;
+  --accent:             #C082A2;
+  --border-brand:       rgba(192, 130, 162, 0.18);
+  --border-light:       rgba(255, 255, 255, 0.1);
+  --link-hover:         #BFB0BC;
+  --code-inline-bg:     rgba(192, 130, 162, 0.12);
+  --code-inline-border: rgba(192, 130, 162, 0.28);
+  --table-text:         #A09898;
+  --table-row-even-bg:  rgba(255, 255, 255, 0.05);
+  --table-th-bg:        rgba(255, 255, 255, 0.08);
+  --table-th-border:    rgba(255, 255, 255, 0.12);
+  --table-th-border-b:  rgba(255, 255, 255, 0.18);
+}
