@@ -1,0 +1,74 @@
+---
+layout: post
+title: "XP Is More Important Now Than It Was Before AI"
+date: 2026-10-07 19:00:00 +0200
+author: Alex
+description: "AI coding tools make Extreme Programming practices more important, not less. When the machine writes the code, human judgment about what to build becomes the scarce resource."
+tags: [xp, ai]
+---
+
+There's a common assumption floating around that AI coding tools make software engineering practices like BDD, pairing, and XP less necessary. The machine writes the code, so the ceremony around how humans collaborate to produce code matters less.
+
+This assumption is backwards.
+
+AI makes execution cheap. It makes the wrong thing fast to build. And it makes the cost of unclear requirements higher than it has ever been.
+
+The practices that XP gave us - writing behavior first, pairing to share understanding, framing stories before starting work - exist precisely to produce clarity before execution. When execution was slow and expensive, fuzzy requirements were tolerable because you had time to correct course. Now execution is fast and cheap, and fuzzy requirements produce wrong software at previously impossible speed.
+
+XP is the meta-skill for the AI age.
+
+---
+
+Let me be specific about what I mean.
+
+**BDD when an AI is writing your code**
+
+Behavior-driven development always had two jobs. The obvious one: produce test coverage. The less obvious one: force a conversation about what the software should actually do before anyone writes any code.
+
+The second job is now more important than the first.
+
+When you write a Gherkin scenario - `Given a user has an empty cart, When they add an item, Then the cart total reflects the item price` - you are not primarily writing a test. You are making the expected behavior concrete enough that anyone, human or machine, can implement it unambiguously.
+
+An AI given a good set of BDD scenarios will implement them correctly. An AI given a vague story ("add cart functionality") will implement something that seems plausible, tests green, ships to staging, and fails the demo because nobody specified what happens to the cart total when a coupon code is applied, or when the same item is added twice, or when the item goes out of stock between add and checkout.
+
+This was always the failure mode. AI just accelerates it.
+
+The teams I've seen do this well treat their BDD scenarios as the authoritative source of truth for what they're building, not as an afterthought that follows implementation. They write the scenarios in the discovery session, before any code exists, with the product owner in the room. Then they hand those scenarios to the AI.
+
+**Pairing when one pair is an AI**
+
+Pairing changed when AI became a capable programming partner. You can now pair with something that knows every library, never needs to look up syntax, is available at 2am, and doesn't get frustrated with your keyboard shortcuts.
+
+What it doesn't do: push back on your approach. Ask if you've considered the edge case. Notice that you've been working toward the wrong abstraction for the last hour. Say "wait, what are we actually trying to accomplish here?"
+
+Human pairing at its best is a conversation about intent. Two developers at a keyboard are not just two people writing code - they're two people keeping each other honest about what the code is for and whether the current approach is going to get there. The navigator isn't just watching. They're maintaining the map.
+
+AI pair programming is more like autocomplete with opinions. It's extremely good at the local, immediate task. It has no view of the larger goal unless you give it one. It will helpfully implement a design you described poorly and produce something that technically works and conceptually misses.
+
+This is why I still pair with humans. Not because the AI isn't useful - it's indispensable - but because my human pair provides something the AI can't: they remember what we were trying to do, they notice when I drift, and they'll say "I don't think we need this" in a way that I'll actually hear.
+
+The pairing practice that works in 2026 looks like this: human pair sets the direction and holds the intent, AI handles the implementation details, human pair reviews what came out. The roles shifted. The practice didn't.
+
+**Discovery and framing when AI can generate stories**
+
+The hardest lesson from working with AI on story writing is that it can generate plausible-looking user stories very quickly and they're often subtly wrong.
+
+The output looks right. The format is correct. The acceptance criteria seem complete. And then you get to refinement and realize the story assumes a user flow that doesn't match how the feature was actually designed, or bring together two different types of users, or skips an entire edge case that your domain expert would have caught in the first five minutes.
+
+Discovery and framing exists because the gap between what stakeholders want and what developers build is a communication problem, not a technology problem. AI doesn't close that gap. It papers over it faster.
+
+The D&F sessions I've been part of that work well use AI for synthesis - pulling together notes, drafting story text after the conversation, generating scenario outlines - but keep the conversation itself human. The stakeholder explaining why this feature matters. The developer asking "what happens if the user doesn't have this permission." The product manager reconciling two contradictory requirements from two different teams.
+
+That conversation is the product. The story document is just the record of it.
+
+---
+
+What I'm not saying: that you need to follow the full XP playbook to ship software with AI tools. You don't. Plenty of teams are shipping without written BDD scenarios or pairing sessions, and some of them are fine.
+
+What I am saying: the failure modes are more severe now. If your requirements are vague, AI builds the vague thing with confidence. If nobody holds the intent, the AI follows the path of least resistance and you end up with a technically functional system that doesn't actually solve the problem.
+
+The practices XP named - write the behavior first, keep two people watching the same screen, do the clarity work before the execution work - are responses to a enduring problem in software: that building the wrong thing is easier than building the right thing.
+
+AI made execution dramatically cheaper. It did nothing about the problem of knowing what to build.
+
+The clarity work is still yours.
