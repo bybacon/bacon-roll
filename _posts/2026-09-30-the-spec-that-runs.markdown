@@ -68,7 +68,7 @@ For us, feature files live in a `docs/` directory with sequential IDs: `BCN-001-
 
 There is no Jira. No Linear. The spec is the story is the ticket is the test.
 
-(bacon-tracker)[https://github.com/bybacon/bacon-tracker] is the tooling that makes this concrete:
+[bacon-tracker](https://github.com/bybacon/bacon-tracker) is the tooling that makes this concrete:
 
 ```
 rake story:feature['Booking Manager']  → features/1_icebox/BCN-001-booking-manager.feature
